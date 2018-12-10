@@ -1,0 +1,43 @@
+<!-- <div class="game-container">
+  <div class="game-header">
+    <h3 class="logo">ngx-Mario</h3>
+    <h3 class="score">number of cells traversed: {{cellsMoved}}</h3>
+    <div class="score-block">
+      <h3 class="score" [ngClass]="{'new-best-score': newBestScore}">Score: {{score}}</h3>
+      <h3 class="best-score" [ngClass]="{'new-best-score': newBestScore}">Best Score: {{best_score}}</h3>
+    </div>
+  </div>
+  <div class="row" *ngFor="let column of board; let i = index;">
+    <div class="column" [ngStyle]="{'background-color': setColors(i, j)}" *ngFor="let row of column; let j = index"></div>
+  </div>
+  <div class="start-button" [ngClass]="{'disable-clicks': gameStarted}" (click)="showMenu()">Click to Enter grid MxN</div>
+  <div class="new-game-menu" *ngIf="showMenuChecker">
+    <p>number of rows:<input type="number" [(ngModel)]='a'></p>
+    <p>number of columns:<input type="number" [(ngModel)]='b'></p>
+    <div class="start-button new-game-button" (click)="newGame()">Start game</div>
+  </div>
+</div> -->
+
+
+
+<div class="game-container">
+  <div class="game-header">
+    <h3 class="logo">ngx-Mario</h3>
+    <h3 class="score">number of cells traversed: {{cellsMoved}}</h3>
+    <div class="score-block">
+      <h3 class="score" [ngClass]="{'new-best-score': newBestScore}">Score: {{score}}</h3>
+      <h3 class="best-score" [ngClass]="{'new-best-score': newBestScore}">Best Score: {{best_score}}</h3>
+    </div>
+  </div>
+  <div class="alignBoard">
+  <div class="row" *ngFor="let column of board; let i = index;" [ngStyle]="{'width': 50*b +'px'}">
+    <div class="column" [ngStyle]="{'background-image': 'url(' + setColors(j , i) + ')'}" *ngFor="let row of column; let j = index"></div>
+  </div>
+</div>
+  <div class="start-button" [ngClass]="{'disable-clicks': gameStarted}" (click)="showMenu()">Click to Enter grid MxN</div>
+  <div class="new-game-menu" *ngIf="showMenuChecker">
+    <p>number of rows:<input type="number" [(ngModel)]='a'></p>
+    <p>number of columns:<input type="number" [(ngModel)]='b'></p>
+    <div class="start-button new-game-button" (click)="newGame()">Start game</div>
+  </div>
+</div>
